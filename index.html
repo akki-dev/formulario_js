@@ -9,48 +9,14 @@
 
 <body>
     <form action="" id="formulario" name="formulario" method="get">
-        <input type="text" name="nombre" id="nombre" placeholder="Escribe Nombre">
-        <input type="radio" name="sexo" id="hombre">Hombre
-        <input type="radio" name="sexo" id="mujer">Mujer
-        <input type="checkbox" name="termino" id="termino">Terminos
-        <button type="submit" name="enviar" id="enviar">Enviar</button>
+        <input type="text" id="nombre" placeholder="Escribe Nombre">
+        <input type="radio" id="hombre">Hombre
+        <input type="radio" id="mujer">Mujer
+        <input type="checkbox" id="termino">Terminos
+        <button type="submit" id="enviar">Enviar</button>
     </form>
 
-    <script>
-        (function () {
-            var formulario = document.getElementsByName('formulario')[0],
-                enviar = document.getElementById('enviar');
-
-            var vaRadio = function (e) {
-                var hombre = formulario.sexo[0],
-                    mujer = formulario.sexo[1];
-                (hombre.checked == true || mujer.checked == true) ?  console.log(''): (alert(
-                    'Elije Uno'), e.preventDefault());
-            }
-
-            var vaTermino = function (e) {
-                var termino = formulario.termino;
-                (formulario.termino.checked == true) ? console.log('')
-                : (alert('Marca los Terminos'), 
-                e.preventDefault());
-            };
-
-            var vaNombre = function (e) {
-                var nombre = formulario.nombre;
-                (nombre.value == 0) ? (alert('Escribe Nombre'),
-                e.preventDefault()) :  console.log('');
-            }
-
-
-            var validar = function (e) {
-                vaNombre(e);
-                vaRadio(e);
-                vaTermino(e);
-            }
-            formulario.addEventListener('submit', validar);
-
-        }());
-    </script>
+    <script src="app.js"></script>
 
 </body>
 
